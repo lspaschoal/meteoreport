@@ -46,10 +46,12 @@ function exportarParaExcel() {
             const frac = parseTimeToExcelFraction(valor);
             if (!isNaN(frac)) valor = frac;
           } else if (colIndex === 3 || colIndex === 4) {
-            // números
+            // Números
             const n = parseNumberFlexible(valor);
             if (!isNaN(n)) valor = n;
-          }
+          } 
+          // 👉 A nova coluna "Tempo Presente" é penúltima,
+          // não precisa de conversão especial, vai como texto
         }
 
         row.push(valor);
@@ -75,7 +77,7 @@ function exportarParaExcel() {
       }
     }
 
-    // Se quiser centralizar também as colunas de dados, pode fazer:
+    // Centraliza também as colunas de dados
     for (let R = 1; R <= range.e.r; R++) {
       for (let C = 0; C <= range.e.c; C++) {
         const cellRef = XLSX.utils.encode_cell({ r: R, c: C });
@@ -86,6 +88,8 @@ function exportarParaExcel() {
         }
       }
     }
+
+    // Ajusta os tipos e formatos específicos
     for (let R = 1; R <= range.e.r; R++) {
       // Duração -> coluna 3
       const cellRef3 = XLSX.utils.encode_cell({ r: R, c: 2 });
@@ -93,6 +97,7 @@ function exportarParaExcel() {
         ws[cellRef3].t = "n";
         ws[cellRef3].z = "hh:mm";
       }
+
       // Números -> colunas 4 e 5
       [3, 4].forEach((c) => {
         const cellRef = XLSX.utils.encode_cell({ r: R, c });
@@ -100,6 +105,9 @@ function exportarParaExcel() {
           ws[cellRef].t = "n";
         }
       });
+
+      // 👉 "Tempo Presente" (penúltima coluna) não precisa ajuste:
+      // já está indo como texto e centralizado
     }
 
     XLSX.utils.book_append_sheet(wb, ws, base);
@@ -107,3 +115,4 @@ function exportarParaExcel() {
 
   XLSX.writeFile(wb, "metars.xlsx");
 }
+

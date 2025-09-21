@@ -31,7 +31,7 @@ class Metar {
         : null;
 
     // Tempo Presente
-    this.tempo_presente = metar_api_redemet.mens.match(/(\+|\-)?(TS|SH|FZ)?(DZ|RA|SN|SG|IC|PL|GR|GS|UP|BR|FG|FU|VA|DU|SA|HZ|PO|SQ|FC|SS|DS)\b/g);
+    this.tempo_presente = metar_api_redemet.mens.match(/(?<=^|\s)([+\-]?(?:TS|SH|FZ)?(?:DZ|RA|SN|SG|IC|PL|GR|GS|UP|BR|FG|FU|VA|DU|SA|HZ|PO|SQ|FC|SS|DS))(?=\s|$)/g);
   }
 
 }

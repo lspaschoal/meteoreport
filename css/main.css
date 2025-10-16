@@ -1,0 +1,179 @@
+.VMC {
+  background-color: #90ee90;
+}
+
+.IMC {
+  background-color: #ffff00;
+}
+
+.DEGRADADO {
+  background-color: #ffa500;
+}
+
+.QGO {
+  background-color: #f04f4f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.wrapper {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.interface {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#data-referencia {
+  height: 39px; /* mesma altura do botão */
+  padding: 0 15px; /* espaço interno confortável */
+  border-radius: 1rem; /* borda arredondada, estilo 2xl */
+  border: 1px solid #ccc; /* borda suave */
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+#data-referencia:hover {
+  border-color: #107c41; /* muda a borda no hover, combina com o botão Excel */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#data-referencia:focus {
+  border-color: #107c41;
+  box-shadow: 0 0 0 3px rgba(16, 124, 65, 0.2); /* foco sutil com sombra verde */
+}
+
+#btn-excel {
+  display: none;
+}
+
+#btn-excel > div {
+    display: flex;
+    justify-content: end;
+}
+
+.interface > button {
+  background-color: #1e90ff;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 1rem; /* 2xl */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 16px;
+}
+
+.interface > button:hover {
+  background-color: #1c86ee; /* verde mais claro */
+  transform: translateY(-2px);
+}
+
+.interface > button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#btn-excel button {
+  background-color: #107c41;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 1rem; /* 2xl */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 16px;
+}
+
+#btn-excel button:hover {
+  background-color: #129752; /* verde mais claro */
+  transform: translateY(-2px);
+}
+
+#btn-excel button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+table {
+  border-collapse: collapse; /* une as bordas das células */
+  border-spacing: 0;
+  width: 100%; /* ocupa toda a largura da div */
+  table-layout: fixed; /* força as colunas a se distribuírem igualmente */
+}
+
+tr {
+  border: 3px solid #fff;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center; /* centraliza texto */
+  border: 1px solid #ccc; /* bordas leves */
+  overflow: hidden; /* evita que o texto quebre fora da célula */
+  text-overflow: ellipsis; /* ... se o texto for grande */
+  white-space: nowrap; /* evita quebra de linha */
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+}
+
+#grafico{
+  
+}
+
+#grafico > div{
+  display: flex;
+  height: 15px;
+}
+
+.grafico-icao {
+  width: 50px;
+}
+
+.linha-horario{
+  padding-left: 50px;
+}
+
+.linha-horario > span {
+  width: 60px;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  text-align: center;
+}
+
+.linha-horario > span:first-child {
+  border-left: 2px solid #000;
+}
+
+.linha-horario > span:last-child {
+  border-right: 2px solid #000;
+}

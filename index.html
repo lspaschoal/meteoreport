@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/estilos.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>MeteoReport</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrapper">
-        <div id="titulo">
-            <h1>
-                Reporte de Condições Meteorológicas
-            </h1>
+      <div id="titulo">
+        <h1>Reporte de Condições Meteorológicas</h1>
+      </div>
+      <div class="interface">
+        <input type="date" name="data-referencia" id="data-referencia" />
+        <button onclick="gerarTabelasMetars()">Gerar Reporte</button>
+        <button onclick="exportarParaPDF()">Exportar Para PDF</button>
+      </div>
+      <div id="btn-excel">
+        <div>
+          <button onclick="">Exportar Para Excel</button>
         </div>
-        <div class="interface">
-            <input type="date" name="data-referencia" id="data-referencia">
-            <button onclick="gerarTabelasMetars()">Gerar Reporte</button>
-        </div>
-        <div id="btn-excel">
-            <div>
-                <button onclick="exportarParaExcel()">Exportar Para Excel</button>
-            </div>
-        </div>
-        <div id="tabela-periodos"></div>
-        <script src="js/Metar.js"></script>
-        <script src="js/minimos.js"></script>
-        <script src="js/metodos_auxiliares.js"></script>
-        <script src="js/tabela.js"></script>
-        <script src="js/excel.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-        <script src="js/main.js"></script>
+      </div>
+      <div id="grafico"></div>
+      <div id="tabela-periodos"></div>
     </div>
-</body>
+    <script src="js/minimos.js"></script>
+    <script src="js/Metar.js"></script>
+    <script src="js/dados_teste.js"></script>
+    <script src="js/html2canvas"></script>
+    <script src="js/jspdf.js"></script>
+    <script src="js/pdf.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
